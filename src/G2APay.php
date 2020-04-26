@@ -3,6 +3,7 @@ namespace G2APay;
 
 use G2APay\Types\Enums\Environment;
 use G2APay\Types\Enums\URLs;
+use G2APay\Types\IPN;
 use G2APay\Types\Payment;
 
 class G2APay {
@@ -51,6 +52,12 @@ class G2APay {
             ->setSecret($this->secret)
             ->setHeader($this->getAuthorizationHeader());
         return $payment;
+    }
+
+    public function getIPN() {
+        $ipn = new IPN($this->env);
+        $ipn->setApiSecret($this->secret);
+        return  $ipn;
     }
 
     /**
