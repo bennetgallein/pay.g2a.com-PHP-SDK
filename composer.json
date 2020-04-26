@@ -3,12 +3,20 @@
     "description": "A PHP SDK for the G2A.com payment gateway",
     "type": "library",
     "require": {
-        "abhilashpujari/php-restservice": "^1.0"
+        "bennetgallein/php-restservice": "1.0.6"
     },
     "authors": [
         {
             "name": "Bennet Gallein",
             "email": "me@bennetgallein.de"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "G2APay\\": "src/"
+        }
+    },
+    "require-dev": {
+        "tracy/tracy": "^2.7"
+    }
 }
